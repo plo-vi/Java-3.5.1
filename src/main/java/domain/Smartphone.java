@@ -13,17 +13,12 @@ import java.util.Objects;
 public class Smartphone extends Product{
     private String maker;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Smartphone that = (Smartphone) o;
-        return Objects.equals(maker, that.maker);
+    public Smartphone(int id, String name, int price, String maker) {
+        super(id, name, price);
+        this.maker = maker;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), maker);
+    public Smartphone(String maker) {
+        this.maker = maker;
     }
 }
