@@ -10,7 +10,7 @@ import repository.ProductRepository;
 class ProductManagerTest {
     private ProductRepository repository = new ProductRepository();
     private ProductManager manager = new ProductManager(repository);
-    private Book first = new Book(1, "Java1", 1000, "Author1");
+    private Book first = new Book(1, "Java1", 10000, "Author1");
     private Book second = new Book(2, "Java2", 1500, "Author2");
     private Smartphone third = new Smartphone(3, "CallPhone1", 10000, "Maker1");
     private Smartphone fourth = new Smartphone(4, "CallPhone2", 10000, "Maker2");
