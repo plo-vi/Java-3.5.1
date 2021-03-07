@@ -5,6 +5,8 @@ import domain.Product;
 import org.junit.jupiter.api.Test;
 import repository.ProductRepository;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 public class ProductManagerEmptyTest {
     private ProductRepository repository = new ProductRepository();
     private ProductManager manager = new ProductManager(repository);
@@ -30,8 +32,5 @@ public class ProductManagerEmptyTest {
         Product[] actual = manager.searchBy("Java7");
         Product[] expected = new Product[]{seventh};
         assertArrayEquals(expected, actual);
-    }
-
-    private void assertArrayEquals(Product[] expected, Product[] actual) {
     }
 }

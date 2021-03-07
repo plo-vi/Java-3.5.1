@@ -7,8 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import repository.ProductRepository;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ProductManagerTest {
     private ProductRepository repository = new ProductRepository();
     private ProductManager manager = new ProductManager(repository);
