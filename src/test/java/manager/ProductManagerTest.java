@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import repository.ProductRepository;
 
-class ProductManagerTest {
+public class ProductManagerTest {
     private ProductRepository repository = new ProductRepository();
     private ProductManager manager = new ProductManager(repository);
     private Book first = new Book(1, "Java1", 10000, "Author1");
@@ -26,56 +26,56 @@ class ProductManagerTest {
     }
 
     @Test
-    void shouldGetAll() {
+    public void shouldGetAll() {
         Product[] actual = repository.findAll();
         Product[] expected = new Product[]{first, second, third, fourth, fifth};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchByBooksName() {
+    public void shouldSearchByBooksName() {
         Product[] actual = manager.searchBy("Java1");
         Product[] expected = new Product[]{first};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchByBooksAuthor() {
+    public void shouldSearchByBooksAuthor() {
         Product[] actual = manager.searchBy("Author2");
         Product[] expected = new Product[]{second};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchBySmartphonesName() {
+    public void shouldSearchBySmartphonesName() {
         Product[] actual = manager.searchBy("CallPhone1");
         Product[] expected = new Product[]{third};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchBySmartphonesMaker() {
+    public void shouldSearchBySmartphonesMaker() {
         Product[] actual = manager.searchBy("Maker2");
         Product[] expected = new Product[]{fourth};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchByProducts() {
+    public void shouldSearchByProducts() {
         Product[] actual = manager.searchBy("Love");
         Product[] expected = new Product[]{fifth};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldNotSearchName() {
+    public void shouldNotSearchName() {
         Product[] actual = manager.searchBy("Nothing");
         Product[] expected = new Product[]{};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldAddNewProduct() {
+    public void shouldAddNewProduct() {
         Product sixth = new Product(6, "Smartness", 123456);
         manager.add(sixth);
         Product[] actual = repository.findAll();
@@ -84,7 +84,7 @@ class ProductManagerTest {
     }
 
     @Test
-    void shouldRemoveById() {
+    public void shouldRemoveById() {
         repository.removeById(2);
         Product[] actual = repository.findAll();
         Product[] expected = new Product[]{first, third, fourth, fifth};

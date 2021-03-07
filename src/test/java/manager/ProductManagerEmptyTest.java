@@ -13,21 +13,21 @@ public class ProductManagerEmptyTest {
     private Book seventh = new Book(7, "Java7", 1030, "Author7");
 
     @Test
-    void shouldGetEmpty() {
+    public void shouldGetEmpty() {
         Product[] actual = repository.findAll();
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchByInEmpty() {
+    public void shouldSearchByInEmpty() {
         Product[] actual = manager.searchBy("Java7");
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchByInOneItem() {
+    public void shouldSearchByInOneItem() {
         manager.add(seventh);
         Product[] actual = manager.searchBy("Java7");
         Product[] expected = new Product[]{seventh};
