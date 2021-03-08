@@ -56,4 +56,8 @@ public class ProductManager {
         }
         return false;
     }
+
+    public void removeById(int id) {
+        repository.removeById(id);
+    }
 }
