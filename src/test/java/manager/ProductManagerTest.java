@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import repository.ProductRepository;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 public class ProductManagerTest {
     private ProductRepository repository = new ProductRepository();
     private ProductManager manager = new ProductManager(repository);
@@ -89,8 +91,5 @@ public class ProductManagerTest {
         Product[] actual = repository.findAll();
         Product[] expected = new Product[]{first, third, fourth, fifth};
         assertArrayEquals(expected, actual);
-    }
-
-    private void assertArrayEquals(Product[] expected, Product[] actual){
     }
 }

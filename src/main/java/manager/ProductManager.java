@@ -51,6 +51,9 @@ public class ProductManager {
             }
             return false;
         }
+        if (product.getName().equalsIgnoreCase(search)) {
+            return true;
+        }
         return false;
     }
 }
